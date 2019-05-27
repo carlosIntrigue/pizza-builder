@@ -1,0 +1,24 @@
+# Blender MTL File: 'None'
+# Material Count: 2
+
+newmtl 13917_Pepperoni
+Ns 7.843137
+Ka 0.000000 0.000000 0.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 2
+map_Kd 13917_Pepperoni_diffuse.jpg
+map_Ka 13917_Pepperoni_diffuse.jpg
+
+newmtl plate
+Ns 11.764706
+Ka 0.000000 0.000000 0.000000
+Kd 0.762320 0.762320 0.762320
+Ks 0.225000 0.225000 0.225000
+Ni 1.500000
+d 1.000000
+illum 2
+map_Kd plate_diffuse.jpg
+map_Ka plate_diffuse.jpg

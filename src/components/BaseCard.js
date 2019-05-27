@@ -3,7 +3,9 @@ import { StyleSheet, View } from "react-native";
 
 class BaseCard extends React.Component {
   render() {
-    return <View style={styles.root}>{this.props.render(this.state)}</View>;
+    const { render, ...rest } = this.props;
+    // console.log("HERE", rest);
+    return <View style={styles.root}>{render(rest)}</View>;
   }
 }
 
@@ -13,7 +15,7 @@ const styles = StyleSheet.create({
   root: {
     backgroundColor: "#FFFFFF",
     borderRadius: 23,
-    height: "60%",
-    padding: 20
+    height: "100%"
+    // padding: 20
   }
 });

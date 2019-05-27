@@ -7,11 +7,14 @@
     "eject": "expo eject"
   },
   "dependencies": {
+    "@unimodules/core": "^1.0.0",
     "expo": "^32.0.0",
     "expo-graphics": "^1.1.0",
     "expo-three": "^3.0.0-alpha.8",
+    "formik": "^1.5.7",
     "react": "16.5.0",
     "react-native": "https://github.com/expo/react-native/archive/sdk-32.0.0.tar.gz",
+    "react-native-paper": "^2.15.2",
     "react-navigation": "^3.11.0",
     "redux": "^4.0.1"
   },

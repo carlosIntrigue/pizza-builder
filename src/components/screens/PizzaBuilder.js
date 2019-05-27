@@ -1,8 +1,8 @@
+import GraphicsVisualizer from "@/components/GraphicsVisualizer";
 import { LinearGradient } from "expo";
 import React from "react";
 import { StyleSheet, View } from "react-native";
-import Step1 from "../cards/Step1";
-import GraphicsVisualizer from "../GraphicsVisualizer";
+import { Router } from "../../router";
 const pizza = {
   crust: {
     size: "L",
@@ -27,11 +27,12 @@ class PizzaBuilder extends React.Component {
     return (
       <LinearGradient colors={["#70FFD7", "#9198e5"]} style={styles.root}>
         {/* <View style={styles.container}> */}
-        <View style={{ flexGrow: 1 }}>
+        <View style={{ height: "40%" }}>
           <GraphicsVisualizer />
         </View>
-
-        <Step1 />
+        <View style={{ height: "60%" }}>
+          <Router />
+        </View>
 
         {/* </View> */}
       </LinearGradient>

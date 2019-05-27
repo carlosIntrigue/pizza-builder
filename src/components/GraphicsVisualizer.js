@@ -1,8 +1,9 @@
 import { View as GraphicsView } from "expo-graphics";
-import ExpoTHREE, { THREE } from "expo-three";
+import ExpoTHREE, { loadObjAsync, THREE } from "expo-three";
 import React from "react";
+// import console = require("console");
 
-export default class GraphicsVisualizer extends React.Component {
+export default class App extends React.Component {
   componentWillMount() {
     THREE.suppressExpoWarnings();
   }
@@ -14,7 +15,6 @@ export default class GraphicsVisualizer extends React.Component {
       <GraphicsView
         onContextCreate={this.onContextCreate}
         onRender={this.onRender}
-        style={{ backgroundColor: "transparent" }}
       />
     );
   }
@@ -38,8 +38,28 @@ export default class GraphicsVisualizer extends React.Component {
       color: 0xff0000
     });
 
+    // const obj = await loadAsync(
+    //   [, ],
+    //   null,
+    //   imageName => resources[imageName]
+    // );
+
+    const mesh = await loadObjAsync({
+      asset: require("@/assets/pizza2.obj")
+    });
+
+    let mate = new THREE.MeshPhongMaterial({
+      ambient: 0x050505,
+      color: 0x0033ff,
+      specular: 0x555555,
+      shininess: 30
+    });
+
     this.cube = new THREE.Mesh(geometry, material);
-    this.scene.add(this.cube);
+    // mesh.rotation.x = -10;
+    this.mesh = mesh;
+
+    this.scene.add(mesh);
 
     this.scene.add(new THREE.AmbientLight(0x404040));
 
@@ -49,8 +69,8 @@ export default class GraphicsVisualizer extends React.Component {
   };
 
   onRender = delta => {
-    this.cube.rotation.x += 3.5 * delta;
-    this.cube.rotation.y += 2 * delta;
+    // this.mesh.rotation.z += 3.5 * delta;
+    this.mesh.rotation.y += 2 * delta;
     this.renderer.render(this.scene, this.camera);
   };
 }

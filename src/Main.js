@@ -1,12 +1,14 @@
-import { Router } from "@/router";
 import React from "react";
 import { StyleSheet } from "react-native";
+import { MainRouter } from "./router";
+// import PizzaBuilder from "./components/screens/PizzaBuilder";
 
 export default class Main extends React.Component {
   render() {
     return (
       // <SafeAreaView style={{ flex: 1 }}>
-      <Router />
+      // <PizzaBuilder />
+      <MainRouter />
       // </SafeAreaView>
     );
   }
